@@ -413,7 +413,7 @@ asdk_errorcode_t asdk_uart_read_non_blocking(asdk_uart_num_t uart_no, uint8_t *d
     {
         return ASDK_UART_ERROR_READ_FAIL;
     }   
-
+    
     return ASDK_UART_STATUS_SUCCESS;
 }
 
