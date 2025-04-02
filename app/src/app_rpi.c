@@ -11,10 +11,10 @@
 /* Debug Print includes */
 #include "debug_print.h"
 
-#define RPI_UART ASDK_UART_3
+#define RPI_UART ASDK_UART_2
 
-#define RPI_UART_TX_PIN MCU_PIN_53
-#define RPI_UART_RX_PIN MCU_PIN_52
+#define RPI_UART_TX_PIN MCU_PIN_61
+#define RPI_UART_RX_PIN MCU_PIN_60
 
 static asdk_uart_config_t __rpi_uart = {
     .uart_no = RPI_UART, /*!< UART no. indicates the UART module no. of the ECU */
@@ -29,7 +29,7 @@ static asdk_uart_config_t __rpi_uart = {
 
     .interrupt_config = {
       .use_interrupt = true,
-      .intr_num = ASDK_EXTI_INTR_CPU_3,
+      .intr_num = ASDK_EXTI_INTR_CPU_2,
       .priority = 1,
     }, /*!< UART interrupt config */
 };
@@ -59,7 +59,7 @@ void app_rpi_iteration()
 {
     if (__rpi_data)
     {
-        // DEBUG_PRINTF("Data received from RPI: %s\r\n", __rpi_data_buffer);
+        DEBUG_PRINTF("Data received from RPI: %s\r\n", __rpi_data_buffer);
         asdk_uart_read_non_blocking(RPI_UART, __rpi_data_buffer, sizeof(__rpi_data_buffer));
         __rpi_data = false;
     }

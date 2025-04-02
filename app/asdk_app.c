@@ -95,6 +95,7 @@ static void task_1ms(void)
 {
     ultrasonic_iterations();
     get_colour_sensor_reading(&colour_c);
+    app_rpi_iteration();
 }
 
 static void task_5ms(void)
@@ -117,7 +118,7 @@ static void task_5ms(void)
 static void task_10ms(void)
 { 
     // DEBUG_PRINTF("Max Debug Uart Buffer Usage %d\r\n", debug_uart_get_max_usage());
-    app_rpi_iteration();
+    // app_rpi_iteration();
 }
 
 static void task_100ms(void)
