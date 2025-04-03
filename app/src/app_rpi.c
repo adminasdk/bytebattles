@@ -59,9 +59,9 @@ void app_rpi_iteration()
 {
     if (__rpi_data)
     {
-        DEBUG_PRINTF("Data received from RPI: %s\r\n", __rpi_data_buffer);
+        // DEBUG_PRINTF("Data received from RPI: %s\r\n", __rpi_data_buffer);
+        // memset(__rpi_data_buffer,'\0',sizeof(__rpi_data_buffer));
         asdk_uart_read_non_blocking(RPI_UART, __rpi_data_buffer, sizeof(__rpi_data_buffer));
-        memset(__rpi_data_buffer,'\0',sizeof(__rpi_data_buffer));
         __rpi_data = false;
     }
 }

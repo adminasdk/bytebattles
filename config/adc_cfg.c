@@ -8,7 +8,6 @@
 
 asdk_mcu_pin_t adc_pins[] = {
     LDR_ADC_PIN,
-    HANDLE_BAR_POT
 };
 
 /* ******** CAUTION! Do not edit below code ******** */
